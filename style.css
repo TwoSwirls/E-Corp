@@ -8,17 +8,25 @@ body {
     margin: 0;
 }
 
+.row {
+    height: 4rem;
+    text-align: center;
+}
+
 .tile {
     width: 64px;
     height: 64px;
     background-color: #77e051;
     display: inline-block;
 }
-.row {
-    height: 4rem;
-    text-align: center;
-}
 
 .tile:hover {
     box-shadow: inset 0 0 0 3px white ;
+}
+
+.tile-image {
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated;
+    object-fit: cover;
 }
