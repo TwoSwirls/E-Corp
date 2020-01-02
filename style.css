@@ -7,3 +7,18 @@ body {
     padding: 4rem;
     margin: 0;
 }
+
+.tile {
+    width: 64px;
+    height: 64px;
+    background-color: #77e051;
+    display: inline-block;
+}
+.row {
+    height: 4rem;
+    text-align: center;
+}
+
+.tile:hover {
+    box-shadow: inset 0 0 0 3px white ;
+}
