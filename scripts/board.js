@@ -21,7 +21,7 @@ export function generate()
             row.appendChild(tile);
             if (j === river)
             {
-                tile.appendChild(newImage("assets/river.png"));
+                tile.style.backgroundImage = "url('assets/river.png')";
             }
             else if (rng(1/3))
             {
