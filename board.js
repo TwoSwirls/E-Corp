@@ -2,6 +2,9 @@ const board = document.getElementById("board");
 
 const river = Math.floor(Math.random() * 7);
 
+// RNG - chance is a fraction
+const rng = (chance) => Math.random() < chance;
+
 // Creates new images
 const newImage = (source) => {
     const image = document.createElement("img");
@@ -25,8 +28,11 @@ for (let i = 0; i < 7; i++)
         row.appendChild(tile);
         if (j === river)
         {
-            const riverImage = newImage("assets/river.png");
-            tile.appendChild(riverImage);
+            tile.appendChild(newImage("assets/river.png"));
+        }
+        else if (rng(1/3))
+        {
+            tile.appendChild(newImage("assets/mount.png"));
         }
     }
 }
