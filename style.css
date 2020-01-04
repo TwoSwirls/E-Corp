@@ -1,6 +1,7 @@
 * {
     user-select: none;
     -webkit-user-drag: none;
+    text-rendering: optimizeLegibility;
 }
 
 html {
@@ -149,7 +150,6 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     font-size: 1rem;
-    text-rendering: optimizeLegibility;
     left: 50%;
     backdrop-filter: blur(5px);
     background-color: rgba(255, 255, 255, 0.5);
@@ -176,7 +176,8 @@ body {
     cursor: not-allowed;
 }
 
-.build-menu-option tooltip {
+tooltip {
+    font-size: 0.835rem;
     visibility: hidden;
     width: 240px;
     background-color: #444;
@@ -185,12 +186,22 @@ body {
     padding: 10px;
     position: absolute;
     z-index: 1;
-    top: 0px;
-    left: 110%;
     box-shadow: var(--shadow);
 }
 
+#score > *:hover {
+    cursor: help;
+}
+
+#score > *:hover tooltip {
+    bottom: 110%;
+    left: 0;
+    visibility: visible;
+}
+
 .build-menu-option:hover tooltip {
+    top: 0;
+    left: 110%;
     visibility: visible;
 }
 
