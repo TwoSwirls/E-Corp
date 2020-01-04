@@ -27,13 +27,23 @@ body {
 }
 
 #bar {
-    padding: 0.75rem;
+    display: flex;
+    padding: 0;
     margin-bottom: 4rem;
 }
 
 #title {
+    flex-grow: 1;
+    padding: 0.75rem;
     font-size: 1.5rem;
     font-weight: bold;
+}
+
+#tutorial, #source {
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1rem;
+    transition: all 80ms linear;
 }
 
 #board {
@@ -50,7 +60,7 @@ body {
 .tile {
     width: 64px;
     height: 64px;
-    background-color: #77e051;
+    background-color: #71aa5c;
     display: inline-block;
     background-repeat: no-repeat;
     background-size: cover;
@@ -58,7 +68,7 @@ body {
 }
 
 .tile:hover {
-    box-shadow: inset 0 0 0 3px white;
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.5);
     cursor: pointer;
 }
 
@@ -76,9 +86,15 @@ body {
     transform: translateX(-50%);
 }
 
-#money, #energy, #turn {
+#score > * {
     display: inline-block;
     margin: 0 0.5rem;
+}
+
+.icon {
+    display: inline-block;
+    height: 1rem;
+    vertical-align: middle;
 }
 
 #money {
@@ -89,8 +105,12 @@ body {
     color: rgb(119, 119, 0);
 }
 
-#turn {
+#upkeep {
     color: rgb(185, 0, 0);
+}
+
+#turn {
+    color: rgb(0, 120, 255);
 }
 
 #next {
@@ -145,7 +165,7 @@ body {
     background-color: transparent;
 }
 
-.build-menu-option:hover {
+#tutorial:hover, #source:hover, .build-menu-option:hover {
     transition: all 80ms linear;
     cursor: pointer;
     background-color: white;
@@ -165,7 +185,7 @@ body {
     padding: 10px;
     position: absolute;
     z-index: 1;
-    top: -5px;
+    top: 0px;
     left: 110%;
     box-shadow: var(--shadow);
 }

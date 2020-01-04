@@ -84,11 +84,16 @@ function createMenu(i, j)
     }
     else
     {
+        let clear = TILE.empty;
+        if (tileType == TILE.hydrodam)
+        {
+            clear = TILE.river;
+        }
         menu.appendChild(createPriceOption(
             "Demolish",
             250,
             "Removes this tile.",
-            () => build(i, j, TILE.empty)
+            () => build(i, j, clear)
         ));
     }
 

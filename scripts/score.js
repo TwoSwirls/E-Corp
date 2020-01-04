@@ -1,12 +1,16 @@
 function updateScore()
 {
-    const moneybox = document.getElementById("money");
-    const energybox = document.getElementById("energy");
-    const turnbox = document.getElementById("turn");
+    const moneyBox = document.getElementById("money-text");
+    moneyBox.innerHTML = document.money;
 
-    moneybox.innerHTML = "Money: $" + document.money;
-    energybox.innerHTML = "Energy: " + document.energy;
-    turnbox.innerHTML = "Turn: " + document.turn;
+    const energyBox = document.getElementById("energy-text");
+    energyBox.innerHTML = document.energy;
+
+    const upkeepBox = document.getElementById("upkeep-text");
+    upkeepBox.innerHTML = document.upkeep;
+
+    const turnBox = document.getElementById("turn-text");
+    turnBox.innerHTML = document.turn;
 }
 
 export { updateScore }

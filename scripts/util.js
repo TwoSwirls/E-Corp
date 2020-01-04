@@ -2,7 +2,7 @@
 const rng = (chance) => Math.random() < chance;
 
 // Creates new images
-function newImage(source) 
+function newImage(source)
 {
     const image = document.createElement("img");
     image.className = "tile-image";
@@ -10,6 +10,7 @@ function newImage(source)
     return image;
 }
 
+// Clear a container
 function clear(container)
 {
     while (container.firstChild) container.firstChild.remove();
