@@ -1,4 +1,5 @@
-import { TILE, drawBoard } from "./board.js";
+import { TILE, TILE_MENU } from "./data.js";
+import { drawBoard } from "./board.js";
 import { clear } from "./util.js";
 import { updateScore } from "./score.js";
 
@@ -30,8 +31,9 @@ function createPriceOption(text, price, description, action)
     return option;
 }
 
-function demolish(i, j) {
-    document.board[i][j] = 0;
+function build(i, j, type)
+{
+    document.board[i][j] = type;
     hideMenu();
 }
 
@@ -53,16 +55,43 @@ function createMenu(i, j)
     const menu = document.getElementById("build-menu");
     clear(menu);
 
-    const tiletype = document.board[i][j];
-    if (tiletype === TILE.mount)
+    const tileType = document.board[i][j];
+    if (tileType == TILE.empty)
+    {
+        Object.keys(TILE_MENU).forEach((type) => {
+            if (type == TILE.hydrodam)
+            {
+                return;
+            }
+            const t = TILE_MENU[type];
+            menu.appendChild(createPriceOption(
+                t.tile,
+                t.cost,
+                t.desc,
+                () => build(i, j, type)
+            ))
+        })
+    }
+    else if (tileType == TILE.river)
+    {
+        const t = TILE_MENU[TILE.hydrodam];
+        menu.appendChild(createPriceOption(
+            t.tile,
+            t.cost,
+            t.desc,
+            () => build(i, j, TILE.hydrodam)
+        ))
+    }
+    else
     {
         menu.appendChild(createPriceOption(
             "Demolish",
             250,
             "Removes this tile.",
-            () => demolish(i, j)
+            () => build(i, j, TILE.empty)
         ));
     }
+
     menu.appendChild(createOption("Cancel", hideMenu));
 
 }

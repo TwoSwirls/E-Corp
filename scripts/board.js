@@ -1,10 +1,6 @@
 import { rng, newImage, clear } from "./util.js";
-import { showMenu } from "./build.js"
-
-const TILE = {
-    river: 1,
-    mount: 2,
-}
+import { showMenu } from "./build.js";
+import { TILE, TILE_IMAGE } from "./data.js";
 
 // Generates the board data
 function generateBoard()
@@ -59,18 +55,17 @@ function drawBoard()
             const tile = document.createElement("div");
             tile.className = "tile";
 
-            switch (tileType) {
-                case TILE.river:
-                    tile.style.backgroundImage = "url('assets/river.png')";
-                    break;
-                case TILE.mount:
-                    tile.appendChild(newImage("assets/mount.png"));
-                default:
-                    break;
+            if (tileType === TILE.river || tileType === TILE.hydrodam)
+            {
+                tile.style.backgroundImage = "url('assets/river.png')";
+            }
+            if (tileType in TILE_IMAGE)
+            {
+                tile.appendChild(newImage(TILE_IMAGE[tileType]));
             }
 
             tile.onclick = () => {
-                tile.style.boxShadow = "inset 0 0 0 3px yellow";
+                tile.style.boxShadow = "inset 0 0 0 3px red";
                 showMenu(i, j);
             }
             row.appendChild(tile);

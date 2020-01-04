@@ -4,21 +4,31 @@
 }
 
 h1 {
-    font-family: 'Ubuntu', sans-serif;
-    margin-top: 0;
+    margin: 2rem 3rem;
     color: white;
+    text-align: center;
     text-shadow: 1px 1px 2px black;
 }
 
+html {
+    height: 100%;
+}
+
 body {
-    padding: 4rem;
     margin: 0;
     background-color: #89cff0;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#board {
+    display: inline-block;
+    margin: 0 calc(50% - 64px * 7 / 2);
+    margin-top: 3.5rem;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
 }
 
 .row {
     height: 4rem;
-    text-align: center;
 }
 
 .tile {
@@ -43,46 +53,51 @@ body {
     object-fit: cover;
 }
 
-#score {
-    display: flex;
-    justify-content: center;
-    font-family: 'Ubuntu', sans-serif;
-    margin-bottom: 1rem;
-    color: white;
-    text-shadow: 1px 1px 2px black;
+#score, #next {
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
 }
 
-#score > * {
-    margin: 0 1rem;
+#score {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #444;
+}
+
+#money, #energy, #turn {
+    display: inline-block;
+    margin: 0 0.5rem;
 }
 
 #money {
-    text-shadow: 1px 1px 2px green;
+    color: rgb(0, 255, 0);
 }
 
 #energy {
-    text-shadow: 1px 1px 2px rgb(138, 138, 0);
+    color: rgb(255, 255, 0);
 }
 
 #turn {
-    text-shadow: 1px 1px 2px red;
+    color: rgb(255, 0, 0);
 }
 
 #next {
+    display: block;
+    margin: 1rem auto;
     transition: all 80ms linear;
     border: none;
     outline: none;
-    font-family: inherit;
-    font-size: inherit;
-    color: inherit;
-    text-shadow: inherit;
-    background-color: transparent;
-    border-radius: 1rem;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
 }
 
 #next:hover {
     transition: all 80ms linear;
-    background-color: rgb(0, 119, 255);
+    background-color: rgb(0, 120, 255);
     color: white;
     cursor: pointer;
 }
@@ -93,7 +108,7 @@ body {
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: rgba(0, 0, 0, 0.5)
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #build {
@@ -106,8 +121,12 @@ body {
     flex-flow: column nowrap;
     width: 20vw;
     top: 50%;
-    transform: translateY(-50%);
-    left: 40vw;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    text-rendering: optimizeLegibility;
+    left: 50%;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.5);
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -117,8 +136,7 @@ body {
     border: none;
     outline:none;
     height: 3rem;
-    backdrop-filter: blur(5px);
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: transparent;
 }
 
 .build-menu-option:hover {
@@ -127,30 +145,22 @@ body {
     background-color: white;
 }
 
+.build-menu-option:disabled:hover {
+    cursor: not-allowed;
+}
+
 .build-menu-option tooltip {
     visibility: hidden;
-    width: 120px;
-    background-color: #333333;
+    width: 240px;
+    background-color: #444;
     color: white;
-    text-align: center;
-    border-radius: 6px;
+    text-align: left;
     padding: 10px;
     position: absolute;
     z-index: 1;
     top: -5px;
     left: 110%;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
-}
-
-.build-menu-option tooltip::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    right: 100%;
-    margin-top: top -5px;
-    border-width: 8px;
-    border-style: solid;
-    border-color: transparent #333 transparent transparent;
 }
 
 .build-menu-option:hover tooltip {
