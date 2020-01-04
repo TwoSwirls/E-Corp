@@ -2,11 +2,17 @@
 const rng = (chance) => Math.random() < chance;
 
 // Creates new images
-const newImage = (source) => {
+function newImage(source) 
+{
     const image = document.createElement("img");
     image.className = "tile-image";
     image.src = source;
     return image;
 }
 
-export { rng, newImage };
+function clear(container)
+{
+    while (container.firstChild) container.firstChild.remove();
+}
+
+export { rng, newImage, clear }

@@ -33,6 +33,7 @@ body {
 
 .tile:hover {
     box-shadow: inset 0 0 0 3px white ;
+    cursor: pointer;
 }
 
 .tile-image {
@@ -85,3 +86,83 @@ body {
     color: white;
     cursor: pointer;
 }
+
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5)
+}
+
+#build {
+    display: none;
+}
+
+#build-menu {
+    position: fixed;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 20vw;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 40vw;
+    background-color: white;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.build-menu-option {
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    border: none;
+    outline:none;
+    height: 3rem;
+
+}
+
+.build-menu-option:hover {
+    transition: all 80ms linear;
+    background-color: rgb(158, 158, 158);
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

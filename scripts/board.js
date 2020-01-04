@@ -1,4 +1,5 @@
-import { rng, newImage } from "./util.js";
+import { rng, newImage, clear } from "./util.js";
+import { showMenu } from "./build.js"
 
 const TILE = {
     river: 1,
@@ -6,7 +7,7 @@ const TILE = {
 }
 
 // Generates the board data
-export function generateBoard()
+function generateBoard()
 {
     const river = Math.floor(Math.random() * 7);
     const board = [];
@@ -39,10 +40,10 @@ export function generateBoard()
 }
 
 // Draws the board from board data
-export function drawBoard(board) {
+function drawBoard()
 {
     const boardBox = document.getElementById("board");
-    while (boardBox.firstChild) boardBox.firstChild.remove();
+    clear(boardBox);
 
     for (let i = 0; i < 7; i++)
     {
@@ -54,7 +55,7 @@ export function drawBoard(board) {
         // This creates tiles in the board
         for(let j = 0; j < 7; j++)
         {
-            const tileType = board[i][j];
+            const tileType = document.board[i][j];
             const tile = document.createElement("div");
             tile.className = "tile";
 
@@ -68,8 +69,10 @@ export function drawBoard(board) {
                     break;
             }
 
+            tile.onclick = () => showMenu(i, j);
             row.appendChild(tile);
         }
     }
 }
-}
+
+export { TILE, generateBoard, drawBoard }

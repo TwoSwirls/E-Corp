@@ -1,27 +1,18 @@
 import { generateBoard, drawBoard } from "./board.js";
+import { updateScore} from "./score.js";
 
-const board = generateBoard();
-drawBoard(board);
+document.board = generateBoard();
+drawBoard();
 
-let money = 0;
-let energy = 0;
-let turn = 0;
-
-function updateScore()
-{
-    const moneybox = document.getElementById("money");
-    const energybox = document.getElementById("energy");
-    const turnbox = document.getElementById("turn");
-
-    moneybox.innerHTML = "Money: $" + money;
-    energybox.innerHTML = "Energy: " + energy;
-    turnbox.innerHTML = "Turn: " + turn;
-}
+document.money = 0;
+document.energy = 0;
+document.turn = 0;
 
 function nextTurn()
+
 {
-    money += 500
-    turn += 1;
+    document.money += 500
+    document.turn += 1;
     updateScore();
 }
 
