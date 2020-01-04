@@ -1,4 +1,4 @@
-import { TILE, TILE_MENU } from "./data.js";
+import { TILE, TILE_DATA } from "./data.js";
 import { drawBoard } from "./board.js";
 import { clear } from "./util.js";
 import { updateScore } from "./score.js";
@@ -58,12 +58,12 @@ function createMenu(i, j)
     const tileType = document.board[i][j];
     if (tileType == TILE.empty)
     {
-        Object.keys(TILE_MENU).forEach((type) => {
+        Object.keys(TILE_DATA).forEach((type) => {
             if (type == TILE.hydrodam)
             {
                 return;
             }
-            const t = TILE_MENU[type];
+            const t = TILE_DATA[type];
             menu.appendChild(createPriceOption(
                 t.tile,
                 t.cost,
@@ -74,7 +74,7 @@ function createMenu(i, j)
     }
     else if (tileType == TILE.river)
     {
-        const t = TILE_MENU[TILE.hydrodam];
+        const t = TILE_DATA[TILE.hydrodam];
         menu.appendChild(createPriceOption(
             t.tile,
             t.cost,
@@ -91,7 +91,7 @@ function createMenu(i, j)
         }
         menu.appendChild(createPriceOption(
             "Demolish",
-            250,
+            500,
             "Removes this tile.",
             () => build(i, j, clear)
         ));
