@@ -11,7 +11,7 @@ function createOption(text, action)
     return option;
 }
 
-function createPriceOption(text, price, action)
+function createPriceOption(text, price, description, action)
 {
     const pay = () => {
         document.money -= price;
@@ -24,12 +24,14 @@ function createPriceOption(text, price, action)
     {
         option.disabled = true;
     }
+    const tooltip = document.createElement("tooltip");
+    tooltip.innerHTML = description;
+    option.appendChild(tooltip);
     return option;
 }
 
 function demolish(i, j) {
     document.board[i][j] = 0;
-    drawBoard();
     hideMenu();
 }
 
@@ -54,7 +56,12 @@ function createMenu(i, j)
     const tiletype = document.board[i][j];
     if (tiletype === TILE.mount)
     {
-        menu.appendChild(createPriceOption("Demolish", 250, () => demolish(i, j)));
+        menu.appendChild(createPriceOption(
+            "Demolish",
+            250,
+            "Removes this tile.",
+            () => demolish(i, j)
+        ));
     }
     menu.appendChild(createOption("Cancel", hideMenu));
 
@@ -62,6 +69,7 @@ function createMenu(i, j)
 
 function hideMenu()
 {
+    drawBoard();
     const menu = document.getElementById("build");
     menu.style.display = "none";
 }

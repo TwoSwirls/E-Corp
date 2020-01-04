@@ -32,7 +32,7 @@ body {
 }
 
 .tile:hover {
-    box-shadow: inset 0 0 0 3px white ;
+    box-shadow: inset 0 0 0 3px white;
     cursor: pointer;
 }
 
@@ -108,7 +108,6 @@ body {
     top: 50%;
     transform: translateY(-50%);
     left: 40vw;
-    background-color: white;
     box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
 }
 
@@ -118,14 +117,44 @@ body {
     border: none;
     outline:none;
     height: 3rem;
-
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .build-menu-option:hover {
     transition: all 80ms linear;
-    background-color: rgb(158, 158, 158);
-    color: white;
     cursor: pointer;
+    background-color: white;
+}
+
+.build-menu-option tooltip {
+    visibility: hidden;
+    width: 120px;
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    left: 110%;
+    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+.build-menu-option tooltip::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: top -5px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent #333 transparent transparent;
+}
+
+.build-menu-option:hover tooltip {
+    visibility: visible;
 }
 
 

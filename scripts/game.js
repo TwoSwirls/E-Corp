@@ -1,6 +1,9 @@
 import { generateBoard, drawBoard } from "./board.js";
 import { updateScore} from "./score.js";
 
+// Disable right click menu
+document.addEventListener("contextmenu", (e) => e.preventDefault());
+
 document.board = generateBoard();
 drawBoard();
 

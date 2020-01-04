@@ -69,7 +69,10 @@ function drawBoard()
                     break;
             }
 
-            tile.onclick = () => showMenu(i, j);
+            tile.onclick = () => {
+                tile.style.boxShadow = "inset 0 0 0 3px yellow";
+                showMenu(i, j);
+            }
             row.appendChild(tile);
         }
     }
