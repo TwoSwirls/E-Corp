@@ -1,6 +1,7 @@
-import { generate } from "./board.js";
+import { generateBoard, drawBoard } from "./board.js";
 
-generate();
+const board = generateBoard();
+drawBoard(board);
 
 let money = 0;
 let energy = 0;
@@ -12,12 +13,10 @@ function updateScore()
     const energybox = document.getElementById("energy");
     const turnbox = document.getElementById("turn");
 
-    moneybox.innerHTML = "Money: " + money;
+    moneybox.innerHTML = "Money: $" + money;
     energybox.innerHTML = "Energy: " + energy;
     turnbox.innerHTML = "Turn: " + turn;
 }
-
-updateScore();
 
 function nextTurn()
 {
@@ -26,6 +25,6 @@ function nextTurn()
     updateScore();
 }
 
-
 const nextbutton = document.getElementById("next");
 nextbutton.onclick = nextTurn;
+nextTurn();
