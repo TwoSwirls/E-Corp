@@ -28,7 +28,7 @@ const TILE_MENU = {
     3:{
         tile: "Solar Panels",
         cost: 200,
-        desc: "(Renewable) Photovoltaic panels is one method to capture solar energy, converting the thermal energy into electricity. Compared to other renewable energies, the maintenance costs are very low. Additionally, they are relatively cheap to install. However, they are neither space or energy efficient, as they rely on their exposure to the sun."
+        desc: "(Renewable) Photovoltaic panels are one method to capture solar energy, converting the thermal energy into electricity. Compared to other renewable energies, the maintenance costs are very low. Additionally, they are relatively cheap to install. However, they are neither space or energy efficient, as they rely on their exposure to the sun."
     },
     4:{
         tile: "Wind Turbines",

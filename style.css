@@ -3,28 +3,44 @@
     -webkit-user-drag: none;
 }
 
-h1 {
-    margin: 2rem 3rem;
-    color: white;
-    text-align: center;
-    text-shadow: 1px 1px 2px black;
-}
-
 html {
     height: 100%;
+    --shadow: 0 0 5px 1px rgba(0, 0, 0, 0.25);
 }
 
 body {
     margin: 0;
     background-color: #89cff0;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ef/Mount_Hood_reflected_in_Mirror_Lake%2C_Oregon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
     font-family: 'Ubuntu', sans-serif;
+}
+
+#score, #next, #bar {
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    box-shadow: var(--shadow);
+}
+
+#bar {
+    padding: 0.75rem;
+    margin-bottom: 4rem;
+}
+
+#title {
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
 #board {
     display: inline-block;
     margin: 0 calc(50% - 64px * 7 / 2);
     margin-top: 3.5rem;
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow);
 }
 
 .row {
@@ -53,19 +69,11 @@ body {
     object-fit: cover;
 }
 
-#score, #next {
-    padding: 0.5rem;
-    font-family: inherit;
-    font-size: inherit;
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
-}
-
 #score {
     display: inline-block;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #444;
 }
 
 #money, #energy, #turn {
@@ -74,15 +82,15 @@ body {
 }
 
 #money {
-    color: rgb(0, 255, 0);
+    color: rgb(0, 126, 0);
 }
 
 #energy {
-    color: rgb(255, 255, 0);
+    color: rgb(119, 119, 0);
 }
 
 #turn {
-    color: rgb(255, 0, 0);
+    color: rgb(185, 0, 0);
 }
 
 #next {
@@ -91,8 +99,6 @@ body {
     transition: all 80ms linear;
     border: none;
     outline: none;
-    background-color: rgba(255, 255, 255, 0.5);
-    backdrop-filter: blur(5px);
 }
 
 #next:hover {
@@ -127,7 +133,7 @@ body {
     left: 50%;
     backdrop-filter: blur(5px);
     background-color: rgba(255, 255, 255, 0.5);
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow);
 }
 
 .build-menu-option {
@@ -143,6 +149,7 @@ body {
     transition: all 80ms linear;
     cursor: pointer;
     background-color: white;
+    box-shadow: var(--shadow);
 }
 
 .build-menu-option:disabled:hover {
@@ -160,7 +167,7 @@ body {
     z-index: 1;
     top: -5px;
     left: 110%;
-    box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: var(--shadow);
 }
 
 .build-menu-option:hover tooltip {
