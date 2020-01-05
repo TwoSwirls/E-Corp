@@ -1,0 +1,32 @@
+#board {
+    display: inline-block;
+    margin: 0 calc(50% - 64px * 7 / 2);
+    margin-top: 3.5rem;
+    box-shadow: var(--shadow);
+}
+
+.row {
+    height: 4rem;
+}
+
+.tile {
+    width: 64px;
+    height: 64px;
+    background-color: #71aa5c;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    image-rendering: pixelated;
+}
+
+.tile:hover {
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+}
+
+.tile-image {
+    width: 64px;
+    height: 64px;
+    image-rendering: pixelated;
+    object-fit: cover;
+}

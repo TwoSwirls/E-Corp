@@ -1,0 +1,33 @@
+#score {
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#score > * {
+    display: inline-block;
+    margin: 0 0.5rem;
+}
+
+.icon {
+    display: inline-block;
+    height: 1rem;
+    vertical-align: middle;
+}
+
+#money {
+    color: rgb(0, 126, 0);
+}
+
+#energy {
+    color: rgb(119, 119, 0);
+}
+
+#upkeep {
+    color: rgb(185, 0, 0);
+}
+
+#turn {
+    color: rgb(0, 120, 255);
+}

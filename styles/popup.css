@@ -1,0 +1,40 @@
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+#build {
+    display: none;
+}
+
+#build-menu {
+    position: fixed;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 20vw;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    left: 50%;
+    backdrop-filter: blur(5px);
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: var(--shadow);
+}
+
+.build-menu-option {
+    font-family: 'Ubuntu', sans-serif;
+    width: 100%;
+    border: none;
+    outline:none;
+    height: 3rem;
+    background-color: transparent;
+}
+
+.build-menu-option:disabled:hover {
+    cursor: not-allowed;
+}

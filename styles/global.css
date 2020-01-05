@@ -1,0 +1,28 @@
+* {
+    user-select: none;
+    -webkit-user-drag: none;
+    text-rendering: optimizeLegibility;
+}
+
+html {
+    height: 100%;
+    --shadow: 0 0 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+body {
+    margin: 0;
+    background-color: #89cff0;
+    background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ef/Mount_Hood_reflected_in_Mirror_Lake%2C_Oregon.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#score, #next, #bar {
+    padding: 0.5rem;
+    font-family: inherit;
+    font-size: inherit;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    box-shadow: var(--shadow);
+}
