@@ -7,12 +7,11 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-
-#build {
+#build, #end {
     display: none;
 }
 
-#build-menu {
+#build-menu, #end-menu {
     position: fixed;
     display: flex;
     flex-flow: column nowrap;
@@ -26,7 +25,22 @@
     box-shadow: var(--shadow);
 }
 
-.build-menu-option {
+#end-menu {
+    width: 40vw;
+}
+
+#end-title {
+    margin: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+#end-desc {
+    margin: 1rem;
+    margin-bottom: 2rem;
+}
+
+.option {
     font-family: 'Ubuntu', sans-serif;
     width: 100%;
     border: none;
@@ -35,6 +49,6 @@
     background-color: transparent;
 }
 
-.build-menu-option:disabled:hover {
+.option:disabled:hover {
     cursor: not-allowed;
 }

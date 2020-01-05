@@ -21,7 +21,7 @@ tooltip {
     visibility: visible;
 }
 
-.build-menu-option:hover tooltip {
+.option:hover tooltip {
     top: 0;
     left: 110%;
     visibility: visible;

@@ -1,5 +1,6 @@
 import { generateBoard, drawBoard } from "./board.js";
 import { calculateMoney, updateScore } from "./score.js";
+import { showEnd } from "./end.js";
 
 // Disable right click menu
 document.addEventListener("contextmenu", (e) => e.preventDefault());
@@ -9,21 +10,25 @@ document.getElementById("source").onclick = () => {
     window.open('https://github.com/twoswirls/E-Corp', '_blank');
 }
 
+// Setup
 document.board = generateBoard();
 drawBoard();
 
-document.money = 0;
+document.money = 500;
 document.energy = 0;
 document.upkeep = 0;
-document.turn = -1;
+document.turn = 0;
+updateScore();
 
-function nextTurn()
-{
-    document.turn += 1;
-    calculateMoney();
-    updateScore();
-}
-
+// Next turn
 const nextbutton = document.getElementById("next");
-nextbutton.onclick = nextTurn;
-nextTurn();
+nextbutton.onclick = () => {
+    calculateMoney();
+    document.turn += 1;
+    updateScore();
+    if (document.turn == 30 || document.money < 0)
+    {
+        showEnd();
+        return;
+    }
+}

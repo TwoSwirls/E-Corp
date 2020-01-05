@@ -27,7 +27,7 @@ const TILE_IMAGE = {
 const TILE_DATA = {
     3:{
         tile: "Solar Panels",
-        energy: [100, 200],
+        energy: [150, 250],
         cost: 200,
         upkeep: 50,
         upkeepIncrease: 0,
@@ -35,7 +35,7 @@ const TILE_DATA = {
     },
     4:{
         tile: "Wind Turbines",
-        energy: [200, 400],
+        energy: [300, 400],
         cost: 400,
         upkeep: 100,
         upkeepIncrease: 0,
@@ -44,7 +44,7 @@ const TILE_DATA = {
     5:{
         tile: "Hydro Dam",
         energy: 1000,
-        cost: 1000,
+        cost: 900,
         upkeep: 100,
         upkeepIncrease: 0,
         desc: "(Renewable) A hydroelectric dam relies on the kinetic energy in either a water reservoir or a flowing river. While the building cost of a hydro dam is expensive, maintenance is much cheaper. In addition, no greenhouse gasses are emitted through this form of energy production. However, hydro dams are environmentally damaging due to their reliance on own a flowing water source. "
@@ -59,9 +59,9 @@ const TILE_DATA = {
     },
     7:{
         tile: "Coal Plant",
-        energy: 450,
+        energy: 500,
         cost: 300,
-        upkeep: 400,
+        upkeep: 350,
         upkeepIncrease: 20,
         desc: "(Non-Renewable) Coal power plants burn coal causing steam to be converted into electricity. In doing so, greenhouse gases are released. Additionally, with the limited amount of coal left, strip mines are used. Much like the power plants, these mines also release greenhouse gases. While much cheaper than other non-renewable energy sources, such as natural gas or oil, coal power plants are still more expensive than renewable energy sources."
     },
@@ -77,15 +77,15 @@ const TILE_DATA = {
         tile: "Natural Gas Plant",
         energy: 500,
         cost: 300,
-        upkeep: 300,
+        upkeep: 275,
         upkeepIncrease: 20,
         desc: " (Non-Renewable) A natural gas plant uses gas turbines in order to convert the natural gas into electricity. The production of natural gas releases less pollutants and greenhouses gases compared to other non-renewable energies. While natural gas plants lead to relatively better overall air quality, they still release a sizable amount of carbon dioxide. Even so, they have cheaper maintenance costs than coal plants"
     },
     10:{
         tile: "Nuclear Plant",
-        energy: 1500,
-        cost: 1000,
-        upkeep: 500,
+        energy: 1250,
+        cost: 1500,
+        upkeep: 600,
         upkeepIncrease: 10,
         desc: "(Non-Renewable Energy) Nuclear power plants use nuclear fission, or the splitting of atoms, in order to create electricity. In doing so, nuclear plants produce a lot more energy than any other energy source. Nuclear plants produce no greenhouse gases, but instead have environmentally damaging nuclear waste. The lifetime of nuclear power plants are long. Although the waste is little, the waste itself takes an extremely long time to decay and is hard to efficiently dispose of."
     }

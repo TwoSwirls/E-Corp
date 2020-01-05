@@ -6,7 +6,7 @@ import { updateScore } from "./score.js";
 function createOption(text, action)
 {
     const option = document.createElement("button");
-    option.className = "build-menu-option";
+    option.className = "option";
     option.innerHTML = text;
     option.onclick = action;
     return option;
@@ -36,8 +36,6 @@ function build(i, j, type)
     document.board[i][j] = type;
     hideMenu();
 }
-
-// This is where all build functions will be
 
 function showMenu(i, j)
 {

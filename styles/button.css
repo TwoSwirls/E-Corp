@@ -13,7 +13,7 @@
     cursor: pointer;
 }
 
-#tutorial:hover, #source:hover, .build-menu-option:hover {
+#tutorial:hover, #source:hover, .option:hover {
     transition: all 80ms linear;
     cursor: pointer;
     background-color: white;
