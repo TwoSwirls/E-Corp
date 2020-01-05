@@ -35,42 +35,71 @@ function generateBoard()
     return board;
 }
 
-// Draws the board from board data
-function drawBoard()
+// Create the board
+function createBoard()
 {
     const boardBox = document.getElementById("board");
-    clear(boardBox);
-
     for (let i = 0; i < 7; i++)
     {
-        // This creates the rows
+        // Create the rows
         const row = document.createElement("div");
         row.className = "row";
-        boardBox.appendChild(row);
 
-        // This creates tiles in the board
         for(let j = 0; j < 7; j++)
         {
-            const tileType = document.board[i][j];
+            // Create the tiles
             const tile = document.createElement("div");
             tile.className = "tile";
-
-            if (tileType === TILE.river || tileType === TILE.hydrodam)
-            {
-                tile.style.backgroundImage = "url('assets/river.png')";
-            }
-            if (tileType in TILE_IMAGE)
-            {
-                tile.appendChild(newImage(TILE_IMAGE[tileType]));
-            }
+            tile.tileType = TILE.empty;
 
             tile.onclick = () => {
                 tile.style.boxShadow = "inset 0 0 0 3px red";
                 showMenu(i, j);
             }
+
             row.appendChild(tile);
+        }
+
+        boardBox.appendChild(row);
+    }
+}
+
+// Update the board drawing with any new changes
+function updateBoard()
+{
+    const boardBox = document.getElementById("board");
+    for (let i = 0; i < 7; i++)
+    {
+        const row = boardBox.children[i];
+        for(let j = 0; j < 7; j++)
+        {
+            const tile = row.children[j];
+            const tileOld = tile.tileType;
+            const tileNew = document.board[i][j];
+
+            if (tileOld === tileNew)
+            {
+                continue;
+            }
+
+            // Reset the tile
+            clear(tile);
+            tile.style.backgroundImage = "";
+            tile.tileType = tileNew;
+
+            // Check if need to set river
+            if (tileNew === TILE.river || tileNew === TILE.hydrodam)
+            {
+                tile.style.backgroundImage = "url('assets/river.png')";
+            }
+
+            // Check if need to add image
+            if (tileNew in TILE_IMAGE)
+            {
+                tile.appendChild(newImage(TILE_IMAGE[tileNew]));
+            }
         }
     }
 }
 
-export { TILE, generateBoard, drawBoard }
+export { TILE, generateBoard, createBoard, updateBoard }

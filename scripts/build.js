@@ -1,5 +1,5 @@
 import { TILE, TILE_DATA } from "./data.js";
-import { drawBoard } from "./board.js";
+import { updateBoard } from "./board.js";
 import { clear } from "./util.js";
 import { updateScore } from "./score.js";
 
@@ -34,7 +34,8 @@ function createPriceOption(text, price, description, action)
 function build(i, j, type)
 {
     document.board[i][j] = type;
-    hideMenu();
+    updateBoard();
+    hideMenu(i, j);
 }
 
 function createTileOption(i, j, type)
@@ -64,7 +65,7 @@ function showMenu(i, j)
 {
     const menu = document.getElementById("build");
     const screen = menu.getElementsByClassName("screen")[0];
-    screen.onclick = hideMenu;
+    screen.onclick = () => hideMenu(i, j);
 
     createMenu(i, j);
 
@@ -114,15 +115,20 @@ function createMenu(i, j)
         ));
     }
 
-    menu.appendChild(createOption("Cancel", hideMenu));
+    menu.appendChild(createOption("Cancel", () => hideMenu(i, j)));
 
 }
 
-function hideMenu()
+function hideMenu(i, j)
 {
-    drawBoard();
+    // Remove red outline
+    const row = document.getElementById("board").children[i];
+    const tile = row.children[j];
+    tile.style.boxShadow = "";
+
+    // Hide menu
     const menu = document.getElementById("build");
     menu.style.display = "none";
 }
 
-export { showMenu, hideMenu }
+export { showMenu }

@@ -11,7 +11,7 @@ html {
 
 body {
     margin: 0;
-    background-color: #89cff0;
+    background-color: rgba(83, 116, 179);
     background-image: url(../assets/mount-hood.jpg);
     background-repeat: no-repeat;
     background-size: cover;

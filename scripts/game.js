@@ -1,4 +1,4 @@
-import { generateBoard, drawBoard } from "./board.js";
+import { generateBoard, createBoard, updateBoard } from "./board.js";
 import { calculateMoney, updateScore } from "./score.js";
 import { showEnd } from "./end.js";
 
@@ -12,7 +12,8 @@ document.getElementById("source").onclick = () => {
 
 // Setup
 document.board = generateBoard();
-drawBoard();
+createBoard();
+updateBoard();
 
 document.money = 500;
 document.energy = 0;
