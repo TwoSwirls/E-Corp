@@ -16,7 +16,7 @@ tooltip {
 }
 
 #score > *:hover tooltip {
-    bottom: 110%;
+    top: 110%;
     left: 0;
     visibility: visible;
 }

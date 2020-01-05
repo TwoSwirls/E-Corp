@@ -18,6 +18,7 @@ document.money = 500;
 document.energy = 0;
 document.upkeep = 0;
 document.turn = 0;
+document.demolish = 0;
 updateScore();
 
 // Next turn

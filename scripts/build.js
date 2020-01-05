@@ -37,6 +37,29 @@ function build(i, j, type)
     hideMenu();
 }
 
+function createTileOption(i, j, type)
+{
+    const t = TILE_DATA[type];
+
+    let cost = t.cost + t.costIncrease * t.built;
+    if (cost > t.costMax)
+    {
+        cost = t.costMax;
+    }
+
+    const option = createPriceOption(
+        t.tile,
+        cost,
+        t.desc,
+        () => {
+            build(i, j, type);
+            t.built += 1;
+        }
+    )
+
+    return option;
+}
+
 function showMenu(i, j)
 {
     const menu = document.getElementById("build");
@@ -61,24 +84,12 @@ function createMenu(i, j)
             {
                 return;
             }
-            const t = TILE_DATA[type];
-            menu.appendChild(createPriceOption(
-                t.tile,
-                t.cost,
-                t.desc,
-                () => build(i, j, type)
-            ))
+            menu.appendChild(createTileOption(i, j, type));
         })
     }
     else if (tileType == TILE.river)
     {
-        const t = TILE_DATA[TILE.hydrodam];
-        menu.appendChild(createPriceOption(
-            t.tile,
-            t.cost,
-            t.desc,
-            () => build(i, j, TILE.hydrodam)
-        ))
+        menu.appendChild(createTileOption(i, j, TILE.hydrodam));
     }
     else
     {
@@ -87,11 +98,19 @@ function createMenu(i, j)
         {
             clear = TILE.river;
         }
+        let cost = 400 + document.demolish * 200;
+        if (cost > 2000)
+        {
+            cost = 2000;
+        }
         menu.appendChild(createPriceOption(
             "Demolish",
-            500,
+           cost,
             "Removes this tile.",
-            () => build(i, j, clear)
+            () => {
+                build(i, j, clear);
+                document.demolish += 1;
+            }
         ));
     }
 
