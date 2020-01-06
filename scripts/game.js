@@ -6,9 +6,15 @@ import { showEnd } from "./end.js";
 // Disable right click menu
 document.addEventListener("contextmenu", (e) => e.preventDefault());
 
-// Link Source button to Github
+// Link buttons
+document.getElementById("tutorial").onclick = () => {
+    // window.open("", "_blank");
+}
+document.getElementById("info").onclick = () => {
+    // window.open("", "_blank");
+}
 document.getElementById("source").onclick = () => {
-    window.open('https://github.com/twoswirls/E-Corp', '_blank');
+    window.open("https://github.com/twoswirls/E-Corp", "_blank");
 }
 
 // Setup
