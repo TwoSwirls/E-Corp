@@ -13,16 +13,16 @@ function calculateEnergy()
 
         // Calculate the energy generated
         let e = 0;
-        const data = TILE_DATA[tile];
-        if (Array.isArray(data.energy))
+        const tileData = TILE_DATA[tile];
+        if (Array.isArray(tileData.energy))
         {
-            const min = data.energy[0];
-            const max = data.energy[1];
+            const min = tileData.energy[0];
+            const max = tileData.energy[1];
             e = Math.round(Math.random() * (max - min) + min);
         }
         else
         {
-            e = data.energy;
+            e = tileData.energy;
         }
 
         // Update total energy and energy table
@@ -46,8 +46,8 @@ function calculateEnergy()
         tooltip.innerHTML += "<br>"
     }
     Object.keys(energyTable).forEach((tile) => {
-        const data = TILE_DATA[tile];
-        tooltip.innerHTML += "<br>" + data.tile + ": " + energyTable[tile];
+        const tileData = TILE_DATA[tile];
+        tooltip.innerHTML += "<br>" + tileData.tile + ": " + energyTable[tile];
     })
 
     return energy;
@@ -63,8 +63,8 @@ function calculateUpkeep()
         {
             return;
         }
-        const data = TILE_DATA[tile];
-        const u = data.upkeep + data.upkeepIncrease * document.turn;
+        const tileData = TILE_DATA[tile];
+        const u = tileData.upkeep + tileData.upkeepIncrease * document.turn;
         upkeep += u;
         if (tile in upkeepTable)
         {
@@ -85,8 +85,8 @@ function calculateUpkeep()
         tooltip.innerHTML += "<br>"
     }
     Object.keys(upkeepTable).forEach((tile) => {
-        const data = TILE_DATA[tile];
-        tooltip.innerHTML += "<br>" + data.tile + ": " + upkeepTable[tile];
+        const tileData = TILE_DATA[tile];
+        tooltip.innerHTML += "<br>" + tileData.tile + ": " + upkeepTable[tile];
     })
 
     return upkeep;

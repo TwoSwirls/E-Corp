@@ -1,5 +1,6 @@
 import { generateBoard, createBoard, updateBoard } from "./board.js";
 import { calculateMoney, updateScore } from "./score.js";
+import { calculateProtests, doProtests } from "./protests.js";
 import { showEnd } from "./end.js";
 
 // Disable right click menu
@@ -33,4 +34,6 @@ nextbutton.onclick = () => {
         showEnd();
         return;
     }
+    const protests = calculateProtests();
+    doProtests(protests);
 }

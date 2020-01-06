@@ -7,11 +7,11 @@
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-#build, #end {
+#build, #end, #protest {
     display: none;
 }
 
-#build-menu, #end-menu {
+#build-menu, #end-menu, #protest-menu {
     position: fixed;
     display: flex;
     flex-flow: column nowrap;
@@ -25,23 +25,25 @@
     box-shadow: var(--shadow);
 }
 
-#end-menu {
+#end-menu, #protest-menu {
     width: 40vw;
 }
 
-#end-title {
+#end-title, #protest-title {
     margin: 1rem;
-    font-size: 1.5rem;
+    margin-bottom: 0;
+    font-size: 1rem;
     font-weight: bold;
 }
 
-#end-desc {
+#end-desc, #protest-desc {
     margin: 1rem;
-    margin-bottom: 2rem;
+    font-size: 0.9rem;
 }
 
 .option {
     font-family: 'Ubuntu', sans-serif;
+    font-size: 0.9rem;
     width: 100%;
     border: none;
     outline:none;
