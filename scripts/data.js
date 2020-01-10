@@ -94,8 +94,8 @@ const TILE_DATA = {
         costMax: 400,
         upkeep: 200,
         upkeepIncrease: 40,
-        protestCost: 300,
-        protestChance: 1/6,
+        protestCost: 450,
+        protestChance: 1/4,
         protestText: [
             "The air is so terrible! I can hardly breathe these day!",
             "Your coal is dirty!"
@@ -111,8 +111,8 @@ const TILE_DATA = {
         costMax: 400,
         upkeep: 200,
         upkeepIncrease: 40,
-        protestCost: 300,
-        protestChance: 1/6,
+        protestCost: 450,
+        protestChance: 1/4,
         protestText: [
             "My family is in the hospital becuase of the oil spills!",
             "I see the pollution from your plants!"
@@ -128,8 +128,8 @@ const TILE_DATA = {
         costMax: 400,
         upkeep: 200,
         upkeepIncrease: 20,
-        protestCost: 300,
-        protestChance: 1/8,
+        protestCost: 400,
+        protestChance: 1/6,
         protestText: [
             "Your plants are damaging the environment!",
             "Just becuase natural gas plants release less pullents doesn't mean they don't release any at all!"
@@ -145,7 +145,7 @@ const TILE_DATA = {
         costMax: 8500,
         upkeep: 600,
         upkeepIncrease: 10,
-        protestCost: 500,
+        protestCost: 750,
         protestChance: 1 / 2,
         protestText: [
             "There's a nuclear bomb in my backyard!",
