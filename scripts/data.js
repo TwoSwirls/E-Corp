@@ -28,7 +28,7 @@ const TILE_DATA = {
     3: {
         built: 0,
         tile: "Solar Panels",
-        energy: [150, 250],
+        energy: [100, 300],
         cost: 200,
         costIncrease: 20,
         costMax: 400,
@@ -42,10 +42,10 @@ const TILE_DATA = {
     4: {
         built: 0,
         tile: "Wind Turbines",
-        energy: [250, 400],
+        energy: [300, 450],
         cost: 400,
         costIncrease: 20,
-        costMax: 800,
+        costMax: 600,
         upkeep: 100,
         upkeepIncrease: 0,
         protestCost: 0,
@@ -56,15 +56,19 @@ const TILE_DATA = {
     5: {
         built: 0,
         tile: "Hydro Dam",
-        energy: 1000,
+        energy: 1200,
         cost: 2000,
         costIncrease: 200,
         costMax: 3200,
         upkeep: 100,
         upkeepIncrease: 0,
-        protestCost: 0,
-        protestChance: 0,
-        protestText: [],
+        protestCost: 500,
+        protestChance: 2/7,
+        protestText: [
+            "There's no more salmon in the river! How are we going to eat!",
+            "I can't go rafting anymore!",
+            "Your dam is harming our indigenous community!"
+        ],
         desc: "(Renewable) A hydroelectric dam relies on the kinetic energy in either a water reservoir or a flowing river. While the building cost of a hydro dam is expensive, maintenance is much cheaper. In addition, no greenhouse gasses are emitted through this form of energy production. However, hydro dams are environmentally damaging due to their reliance on own a flowing water source. "
     },
     6: {
@@ -72,9 +76,9 @@ const TILE_DATA = {
         tile: "Biofuel Plant",
         energy: 500,
         cost: 450,
-        costIncrease: 75,
-        costMax: 1200,
-        upkeep: 300,
+        costIncrease: 50,
+        costMax: 1000,
+        upkeep: 250,
         upkeepIncrease: 0,
         protestCost: 0,
         protestChance: 0,
@@ -89,10 +93,13 @@ const TILE_DATA = {
         costIncrease: 20,
         costMax: 400,
         upkeep: 200,
-        upkeepIncrease: 30,
-        protestCost: 0,
-        protestChance: 0,
-        protestText: [],
+        upkeepIncrease: 40,
+        protestCost: 300,
+        protestChance: 1/6,
+        protestText: [
+            "The air is so terrible! I can hardly breathe these day!",
+            "Your coal is dirty!"
+        ],
         desc: "(Non-Renewable) Coal power plants burn coal causing steam to be converted into electricity. In doing so, greenhouse gases are released. Additionally, with the limited amount of coal left, strip mines are used. Much like the power plants, these mines also release greenhouse gases. While much cheaper than other non-renewable energy sources, such as natural gas or oil, coal power plants are still more expensive than renewable energy sources."
     },
     8: {
@@ -100,13 +107,16 @@ const TILE_DATA = {
         tile: "Oil Plant",
         energy: 700,
         cost: 300,
-        costIncrease: 10,
+        costIncrease: 20,
         costMax: 400,
         upkeep: 200,
-        upkeepIncrease: 20,
-        protestCost: 0,
-        protestChance: 0,
-        protestText: [],
+        upkeepIncrease: 40,
+        protestCost: 300,
+        protestChance: 1/6,
+        protestText: [
+            "My family is in the hospital becuase of the oil spills!",
+            "I see the pollution from your plants!"
+        ],
         desc: "(Non-Renewable) Oil, also known as petroleum, is refined into products like gasoline, and play a key role in making in plastic products. Also, oil can be converted into electricity when it is burned. As a hydrocarbon, a compound of hydrogen and carbon, oil releases carbon dioxide and soot when it is burned, contributing to climate change. Oil plants are the cheapest to maintain and operate compared to other non-renewable options. However, like coal, the supply for oil is limited. "
     },
     9: {
@@ -114,22 +124,25 @@ const TILE_DATA = {
         tile: "Natural Gas Plant",
         energy: 600,
         cost: 300,
-        costIncrease: 10,
+        costIncrease: 20,
         costMax: 400,
         upkeep: 200,
-        upkeepIncrease: 10,
-        protestCost: 0,
-        protestChance: 0,
-        protestText: [],
-        desc: " (Non-Renewable) A natural gas plant uses gas turbines in order to convert the natural gas into electricity. The production of natural gas releases less pollutants and greenhouses gases compared to other non-renewable energies. While natural gas plants lead to relatively better overall air quality, they still release a sizable amount of carbon dioxide. Even so, they have cheaper maintenance costs than coal plants"
+        upkeepIncrease: 20,
+        protestCost: 300,
+        protestChance: 1/8,
+        protestText: [
+            "Your plants are damaging the environment!",
+            "Just becuase natural gas plants release less pullents doesn't mean they don't release any at all!"
+        ],
+        desc: " (Non-Renewable) A natural gas plant uses gas turbines in order to convert the natural gas into electricity. The production of natural gas releases less pollutants, such as methane, and greenhouses gases compared to other non-renewable energies. While natural gas plants lead to relatively better overall air quality, they still release a sizable amount of carbon dioxide. Even so, they have cheaper maintenance costs than coal plants"
     },
     10: {
         built: 0,
         tile: "Nuclear Plant",
         energy: 2000,
-        cost: 2000,
+        cost: 2500,
         costIncrease: 1000,
-        costMax: 8000,
+        costMax: 8500,
         upkeep: 600,
         upkeepIncrease: 10,
         protestCost: 500,
@@ -137,6 +150,7 @@ const TILE_DATA = {
         protestText: [
             "There's a nuclear bomb in my backyard!",
             "The toxic waste is harming my family!",
+            "That thing is going to blow up any day now!",
             "I don't like the look of it!"
         ],
         desc: "(Non-Renewable Energy) Nuclear power plants use nuclear fission, or the splitting of atoms, in order to create electricity. In doing so, nuclear plants produce a lot more energy than any other energy source. Nuclear plants produce no greenhouse gases, but instead have environmentally damaging nuclear waste. The lifetime of nuclear power plants are long. Although the waste is little, the waste itself takes an extremely long time to decay and is hard to efficiently dispose of."

@@ -68,7 +68,7 @@ function doProtests(protestList)
                       <br>
                       <br> <i>"${reason}"</i>
                       <br>
-                      <br> You spend a money to calm the protestors, and promise changes.`
+                      <br> You spend money to calm the protestors, and promise changes for the future.`
     button.innerHTML = "Pay $" + protest.cost;
     button.onclick = () => {
         document.money -= protest.cost;
