@@ -48,9 +48,12 @@ const TILE_DATA = {
         costMax: 600,
         upkeep: 100,
         upkeepIncrease: 0,
-        protestCost: 0,
-        protestChance: 0,
-        protestText: [],
+        protestCost: 250,
+        protestChance: 1/12,
+        protestText: [
+            "I can't sleep at all with that thing making a ruckus!",
+            "The noise pollution is affecting my buisness!"
+        ],
         desc: "(Renewable)  Releasing no greenhouse gases, wind turbines are able to convert the wind’s kinetic energy into electricity. While the costs of building and maintaining a wind turbine are falling as technology improves, they are still relatively pricey. Also, similar to solar panels, wind turbines are inconsistent, relying on good wind speeds. Despite this, wind turbines still make for a hopeful alternative to other non-renewable energies."
     },
     5: {
@@ -97,7 +100,7 @@ const TILE_DATA = {
         protestCost: 450,
         protestChance: 1/4,
         protestText: [
-            "The air is so terrible! I can hardly breathe these day!",
+            "The air is so terrible! I can hardly breathe these days!",
             "Your coal is dirty!"
         ],
         desc: "(Non-Renewable) Coal power plants burn coal causing steam to be converted into electricity. In doing so, greenhouse gases are released. Additionally, with the limited amount of coal left, strip mines are used. Much like the power plants, these mines also release greenhouse gases. While much cheaper than other non-renewable energy sources, such as natural gas or oil, coal power plants are still more expensive than renewable energy sources."
@@ -114,7 +117,7 @@ const TILE_DATA = {
         protestCost: 450,
         protestChance: 1/4,
         protestText: [
-            "My family is in the hospital becuase of the oil spills!",
+            "My family is in the hospital because of the oil spills!",
             "I can see the pollution from your plants!"
         ],
         desc: "(Non-Renewable) Oil, also known as petroleum, is refined into products like gasoline, and play a key role in making in plastic products. Also, oil can be converted into electricity when it is burned. As a hydrocarbon, a compound of hydrogen and carbon, oil releases carbon dioxide and soot when it is burned, contributing to climate change. Oil plants are the cheapest to maintain and operate compared to other non-renewable options. However, like coal, the supply for oil is limited. "
@@ -132,7 +135,7 @@ const TILE_DATA = {
         protestChance: 1/5,
         protestText: [
             "Your plants are damaging the environment!",
-            "Just becuase natural gas plants release less pullents doesn't mean they don't release any at all!"
+            "Natural gas plants still release pollutants!"
         ],
         desc: " (Non-Renewable) A natural gas plant uses gas turbines in order to convert the natural gas into electricity. The production of natural gas releases less pollutants, such as methane, and greenhouses gases compared to other non-renewable energies. While natural gas plants lead to relatively better overall air quality, they still release a sizable amount of carbon dioxide. Even so, they have cheaper maintenance costs than coal plants"
     },
