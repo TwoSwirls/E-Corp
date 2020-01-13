@@ -1,5 +1,5 @@
 import { updateScore } from "./score.js";
-import { TILE, TILE_DATA } from "./data.js";
+import { TILE, TILE_POLLUTERS, TILE_DATA } from "./data.js";
 import { rng } from "./util.js";
 
 function calculateProtests()
@@ -14,7 +14,13 @@ function calculateProtests()
         }
 
         const tileData = TILE_DATA[tile];
-        if (rng(tileData.protestChance))
+        let protestChance = tileData.protestChance;
+        if (TILE_POLLUTERS.includes(+tile))
+        {
+            protestChance *= 1 + 1.5 * document.pollution;
+            console.log(protestChance);
+        }
+        if (rng(protestChance))
         {
             if (tile in protestTable)
             {
@@ -40,7 +46,7 @@ function calculateProtests()
     return protestList;
 }
 
-function doProtests(protestList)
+function doProtests(protestList, resolve)
 {
     // Check if there are protests
     if (protestList.length <= 0)
@@ -77,6 +83,7 @@ function doProtests(protestList)
     }
 
     document.getElementById("protest").style.display = "block";
+    if (resolve !== undefined) resolve();
 }
 
 export { calculateProtests, doProtests }

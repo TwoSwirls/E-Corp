@@ -24,6 +24,8 @@ const TILE_IMAGE = {
     10: "assets/nuclear.png"
 }
 
+const TILE_POLLUTERS = [ TILE.coal, TILE.oil, TILE.natgas, TILE.nuclear ];
+
 const TILE_DATA = {
     3: {
         built: 0,
@@ -142,14 +144,14 @@ const TILE_DATA = {
     10: {
         built: 0,
         tile: "Nuclear Plant",
-        energy: 2250,
+        energy: 2000,
         cost: 4000,
         costIncrease: 1000,
         costMax: 8000,
         upkeep: 600,
         upkeepIncrease: 25,
         protestCost: 750,
-        protestChance: 1 / 3,
+        protestChance: 1 / 2,
         protestText: [
             "There's a nuclear bomb in my backyard!",
             "The toxic waste is harming my family!",
@@ -160,4 +162,4 @@ const TILE_DATA = {
     }
 }
 
-export { TILE, TILE_IMAGE, TILE_DATA }
+export { TILE, TILE_IMAGE, TILE_POLLUTERS, TILE_DATA }

@@ -1,7 +1,7 @@
 import { generateBoard, createBoard, updateBoard } from "./board.js";
-import { calculateMoney, updateScore } from "./score.js";
+import { calculateMoney, calculatePollution, updateScore } from "./score.js";
 import { calculateProtests, doProtests } from "./protests.js";
-import { showEnd } from "./end.js";
+import { checkEnd } from "./end.js";
 
 // Disable right click menu
 document.addEventListener("contextmenu", (e) => e.preventDefault());
@@ -27,19 +27,18 @@ document.energy = 0;
 document.upkeep = 0;
 document.turn = 0;
 document.demolish = 0;
+document.pollution = 0;
 updateScore();
 
 // Next turn
 const nextbutton = document.getElementById("next");
 nextbutton.onclick = () => {
+    const protest = new Promise(
+        (resolve) => doProtests(calculateProtests(), resolve)
+    )
     calculateMoney();
+    calculatePollution();
     document.turn += 1;
     updateScore();
-    if (document.turn == 30 || document.money < 0)
-    {
-        showEnd();
-        return;
-    }
-    const protests = calculateProtests();
-    doProtests(protests);
+    protest.then(checkEnd);
 }

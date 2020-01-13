@@ -1,4 +1,4 @@
-import { TILE, TILE_DATA } from "./data.js";
+import { TILE, TILE_POLLUTERS, TILE_DATA } from "./data.js";
 
 function calculateEnergy()
 {
@@ -113,6 +113,25 @@ function calculateMoney()
                         <br> Upkeep: ${-upkeep}`;
 }
 
+function calculatePollution()
+{
+    // Count number of polluting buildings built
+    let totalBuilt = 0;
+    TILE_POLLUTERS.forEach((polluter) => {
+        const polluterData = TILE_DATA[polluter];
+        totalBuilt += polluterData.built;
+    })
+
+    // Set background to gray out based on % of board covered in polluter tiles
+    const percent = totalBuilt / 42;
+    const background = document.getElementById("background");
+    if (percent > document.pollution)
+    {
+        document.pollution = percent;
+        background.style.filter = "grayscale(" + percent * 2 + ")";
+    }
+}
+
 function updateScore()
 {
     const moneyBox = document.getElementById("money-text");
@@ -128,4 +147,4 @@ function updateScore()
     turnBox.innerHTML = document.turn;
 }
 
-export { calculateMoney, updateScore }
+export { calculateMoney, calculatePollution, updateScore }
