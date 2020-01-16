@@ -18,7 +18,6 @@ function calculateProtests()
         if (TILE_POLLUTERS.includes(+tile))
         {
             protestChance *= 1 + 1.5 * document.pollution;
-            console.log(protestChance);
         }
         if (rng(protestChance))
         {
