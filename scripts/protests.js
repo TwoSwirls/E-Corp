@@ -52,6 +52,7 @@ function doProtests(protestList, resolve)
     if (protestList.length <= 0)
     {
         document.getElementById("protest").style.display = "none";
+        if (resolve !== undefined) resolve();
         return;
     }
 
@@ -79,11 +80,10 @@ function doProtests(protestList, resolve)
     button.onclick = () => {
         document.money -= protest.cost;
         updateScore();
-        doProtests(protestList);
+        doProtests(protestList, resolve);
     }
 
     document.getElementById("protest").style.display = "block";
-    if (resolve !== undefined) resolve();
 }
 
 export { calculateProtests, doProtests }
