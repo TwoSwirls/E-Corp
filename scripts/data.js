@@ -56,7 +56,7 @@ const TILE_DATA = {
             "I can't sleep at all with that thing making a ruckus!",
             "The noise pollution is affecting my buisness!"
         ],
-        desc: "(Renewable)  Releasing no greenhouse gases, wind turbines are able to convert the wind’s kinetic energy into electricity. While the costs of building and maintaining a wind turbine are falling as technology improves, they are still relatively pricey. Also, similar to solar panels, wind turbines are inconsistent, relying on good wind speeds. Despite this, wind turbines still make for a hopeful alternative to other non-renewable energies."
+        desc: "(Renewable) Releasing no greenhouse gases, wind turbines are able to convert the wind’s kinetic energy into electricity. While the costs of building and maintaining a wind turbine are falling as technology improves, they are still relatively pricey. Also, similar to solar panels, wind turbines are inconsistent, relying on good wind speeds. Despite this, wind turbines still make for a hopeful alternative to other non-renewable energies."
     },
     5: {
         built: 0,
@@ -74,7 +74,7 @@ const TILE_DATA = {
             "I can't go rafting anymore!",
             "Your dam is harming our indigenous community!"
         ],
-        desc: "(Renewable) A hydroelectric dam relies on the kinetic energy in either a water reservoir or a flowing river. While the building cost of a hydro dam is expensive, maintenance is much cheaper. In addition, no greenhouse gasses are emitted through this form of energy production. However, hydro dams are environmentally damaging due to their reliance on own a flowing water source. "
+        desc: "(Renewable) A hydroelectric dam relies on the kinetic energy in either a water reservoir or a flowing river. While the building cost of a hydro dam is expensive, maintenance is much cheaper. In addition, no greenhouse gasses are emitted through this form of energy production. However, hydro dams are environmentally damaging due to their reliance on own a flowing water source."
     },
     6: {
         built: 0,

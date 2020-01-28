@@ -11,7 +11,7 @@
     font-weight: bold;
 }
 
-#tutorial, #info, #source {
+#tutorial, #info, #sources, #source {
     display: inline-block;
     padding: 1rem;
     font-size: 1rem;
