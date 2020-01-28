@@ -8,7 +8,7 @@ document.addEventListener("contextmenu", (e) => e.preventDefault());
 
 // Link buttons
 document.getElementById("tutorial").onclick = () => {
-    window.open("https://gdoc.pub/doc/e/2PACX-1vR7v5Yep86I5FwWjk-qgK4e6-p1ItOObG_pSW_THMrEa8OJAqQCcyUHPbUaRAaGp7cRD0k5UzMTpKfX", "_blank");
+    window.open("https://docs.google.com/document/d/1IUFy-_y0Qa6bhWUtNvzqeKxO3iUlcqZsnF4nhxUIeoY/edit?usp=sharing", "_blank");
 }
 document.getElementById("info").onclick = () => {
     window.open("https://gdoc.pub/doc/e/2PACX-1vTiPbilj57gvVXQqbHDEEYvcub7lWbjHs960f_NDMMVKXmTmvtRLkQS9VuZqLzkAUn_6R2O_J3l7WFq#", "_blank");
